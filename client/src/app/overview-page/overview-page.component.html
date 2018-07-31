@@ -1,0 +1,75 @@
+<div class="page-title">
+  <h4>Клиенты</h4>
+  <button
+    class="waves-effect waves-light btn grey darken-1"
+    routerLink="/client/new"
+  >
+    Добавить клиента
+  </button>
+</div>
+
+<div class="filter js-filter-block">
+  <div class="fr">
+    <div class="col order">
+      <div class="input-field inline order-position-input">
+        <input type="text" id="names">
+        <label for="names">ФИО</label>
+      </div>
+    </div>
+    <div class="col filter-pickers">
+      <div class="input-field">
+        <input type="text" class="datepicker">
+        <label>Начало</label>
+      </div>
+
+      <div class="input-field">
+        <input type="text" class="datepicker">
+        <label>Конец</label>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn waves-effect wavers-light btn-small">Применить фильтр</button>
+</div>
+
+<div
+  class="row"
+  *ngIf="clients$ | async as clients; else loader">
+  <div class="col s12">
+    <div class="collection" *ngIf="clients.length !== 0; else empty">
+      <table class="highlight">
+        <thead>
+        <tr>
+          <th>Номер</th>
+          <th>ФИО</th>
+          <th>Питомцы</th>
+          <th>Город</th>
+          <th>Адрес</th>
+          <th>Баланс</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let client of clients"
+            [routerLink]="['/client', client._id]">
+          <td>1</td>
+          <td>{{client.lastName}} {{client.name}}</td>
+          <td>Дени</td>
+          <td>{{client.city}}</td>
+          <td>{{client.address}}, {{client.numberHouseOrFlat}}</td>
+          <td>0</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #empty>
+      <div class="center">
+        У вас нет ни одного клиента
+      </div>
+    </ng-template>
+  </div>
+</div>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
+

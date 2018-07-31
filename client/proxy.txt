@@ -1,0 +1,9 @@
+Backend
+
+http://localhost:5000/api/auth/login
+http://localhost:500/api/auth/registration
+
+FrontEnd
+
+http://localhost:5000/api/auth/login
+http://localhost:5000/api/auth/registration

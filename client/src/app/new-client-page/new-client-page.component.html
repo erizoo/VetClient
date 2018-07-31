@@ -1,0 +1,102 @@
+<div class="page-title">
+  <h4>Новый клиент</h4>
+</div>
+
+<div class="row">
+  <form class="col s12 l6" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="input-field">
+        <i class="material-icons prefix">account_circle</i>
+        <input formControlName="lastName"
+               id="last_name"
+               type="text"
+               autocomplete="foo"
+               [ngClass]="{'invalid': form.get('lastName').invalid && form.get('lastName').touched}"
+               >
+        <label [ngClass]="{'active': !isNew}" for="last_name">Фамилия</label>
+        <span
+          class="helper-text red-text"
+          *ngIf="form.get('lastName').invalid && form.get('lastName').touched"
+        >
+        <span *ngIf="form.get('lastName').errors['required']">
+          Поле Фамилия не может быть пустым.
+        </span>
+      </span>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">account_circle</i>
+        <input formControlName="firstName"
+               id="first_name"
+               autocomplete="foo"
+               type="text">
+        <label for="first_name">Имя</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">account_circle</i>
+        <input formControlName="middleName"
+               autocomplete="foo"
+               type="text"
+               id="middle_name">
+        <label for="middle_name">Отчество</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">account_circle</i>
+        <input formControlName="passport"
+               id="passport"
+               autocomplete="foo"
+               type="text">
+        <label for="passport">Номер паспорта</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="material-icons prefix">phone</i>
+        <input formControlName="numberMobile"
+               autocomplete="foo"
+               type="text"
+               id="number-mobile">
+        <label for="number-mobile">Моб. телефон</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">email</i>
+        <input formControlName="email"
+               id="email"
+               autocomplete="foo"
+               type="text">
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <i class="material-icons prefix">home</i>
+        <input formControlName="city"
+               id="city"
+               autocomplete="foo"
+               type="text">
+        <label for="city">Населенный пункт</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">home</i>
+        <input formControlName="address"
+               id="address"
+               autocomplete="foo"
+               type="text">
+        <label for="address">Улица</label>
+      </div>
+      <div class="input-field">
+        <i class="material-icons prefix">home</i>
+        <input formControlName="numberHouseOrFlat"
+               id="numberHouseOrFlat"
+               autocomplete="foo"
+               type="text">
+        <label for="numberHouseOrFlat">Номер дома/Квартиры</label>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn waves-effect waves-light" type="submit" name="action">Сохранить
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </form>
+</div>
+
