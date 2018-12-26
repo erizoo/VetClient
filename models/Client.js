@@ -13,35 +13,10 @@ const categorySchema = new Schema({
     middleName: {
         type: String
     },
-    passport: {
-        type: String
-    },
     numberMobile: {
         type: String,
         required: true
     },
-    homePhoneNumber: {
-        type: String
-    },
-    workPhoneNumber: {
-        type: String
-    },
-    email: {
-        type: String
-    },
-    city:{
-        type: String,
-        required: true
-    },
-    address: {
-        type: String,
-        required: true
-    },
-    numberHouseOrFlat: {
-        type: String,
-        required: true
-    },
-
 
 })
 

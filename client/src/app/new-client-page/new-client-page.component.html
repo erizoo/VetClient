@@ -3,7 +3,7 @@
 </div>
 
 <div class="row">
-  <form class="col s12 l6" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form class="col " [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="input-field">
         <i class="material-icons prefix">account_circle</i>
@@ -39,14 +39,6 @@
                id="middle_name">
         <label for="middle_name">Отчество</label>
       </div>
-      <div class="input-field">
-        <i class="material-icons prefix">account_circle</i>
-        <input formControlName="passport"
-               id="passport"
-               autocomplete="foo"
-               type="text">
-        <label for="passport">Номер паспорта</label>
-      </div>
     </div>
     <div class="row">
       <div class="input-field">
@@ -56,40 +48,6 @@
                type="text"
                id="number-mobile">
         <label for="number-mobile">Моб. телефон</label>
-      </div>
-      <div class="input-field">
-        <i class="material-icons prefix">email</i>
-        <input formControlName="email"
-               id="email"
-               autocomplete="foo"
-               type="text">
-        <label for="email">Email</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field">
-        <i class="material-icons prefix">home</i>
-        <input formControlName="city"
-               id="city"
-               autocomplete="foo"
-               type="text">
-        <label for="city">Населенный пункт</label>
-      </div>
-      <div class="input-field">
-        <i class="material-icons prefix">home</i>
-        <input formControlName="address"
-               id="address"
-               autocomplete="foo"
-               type="text">
-        <label for="address">Улица</label>
-      </div>
-      <div class="input-field">
-        <i class="material-icons prefix">home</i>
-        <input formControlName="numberHouseOrFlat"
-               id="numberHouseOrFlat"
-               autocomplete="foo"
-               type="text">
-        <label for="numberHouseOrFlat">Номер дома/Квартиры</label>
       </div>
     </div>
     <div class="row">

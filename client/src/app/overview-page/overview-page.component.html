@@ -16,47 +16,29 @@
         <label for="names">ФИО</label>
       </div>
     </div>
-    <div class="col filter-pickers">
-      <div class="input-field">
-        <input type="text" class="datepicker">
-        <label>Начало</label>
-      </div>
-
-      <div class="input-field">
-        <input type="text" class="datepicker">
-        <label>Конец</label>
-      </div>
-    </div>
   </div>
 
-  <button class="btn waves-effect wavers-light btn-small">Применить фильтр</button>
+  <button class="btn waves-effect wavers-light btn-small" routerLink="/client/filter">Применить фильтр</button>
 </div>
 
 <div
   class="row"
   *ngIf="clients$ | async as clients; else loader">
-  <div class="col s12">
+  <div class="col s12" style="width: 50%">
     <div class="collection" *ngIf="clients.length !== 0; else empty">
-      <table class="highlight">
+      <table class="centered">
         <thead>
         <tr>
           <th>Номер</th>
           <th>ФИО</th>
-          <th>Питомцы</th>
-          <th>Город</th>
-          <th>Адрес</th>
-          <th>Баланс</th>
+          <th>Моб. тел</th>
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let client of clients"
-            [routerLink]="['/client', client._id]">
-          <td>1</td>
-          <td>{{client.lastName}} {{client.name}}</td>
-          <td>Дени</td>
-          <td>{{client.city}}</td>
-          <td>{{client.address}}, {{client.numberHouseOrFlat}}</td>
-          <td>0</td>
+        <tr *ngFor="let client of clients; let i = index" [routerLink]="['/client', client._id]">
+          <td>{{i + 1}}</td>
+          <td>{{client.lastName}} {{client.firstName}} {{client.middleName}}</td>
+          <td>{{client.numberMobile}}</td>
         </tr>
         </tbody>
       </table>

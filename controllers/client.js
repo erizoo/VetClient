@@ -27,14 +27,7 @@ module.exports.create = async function(req, res) {
         lastName: req.body.lastName,
         firstName: req.body.firstName,
         middleName: req.body.middleName,
-        passport: req.body.passport,
         numberMobile: req.body.numberMobile,
-        homePhoneNumber: req.body.homePhoneNumber,
-        workPhoneNumber: req.body.workPhoneNumber,
-        email: req.body.email,
-        city: req.body.city,
-        numberHouseOrFlat: req.body.numberHouseOrFlat,
-        address: req.body.address
     })
     console.log('client' + client)
     try {
@@ -50,14 +43,7 @@ module.exports.update = async function(req, res) {
         lastName: req.body.lastName,
         firstName: req.body.firstName,
         middleName: req.body.middleName,
-        passport: req.body.passport,
         numberMobile: req.body.numberMobile,
-        homePhoneNumber: req.body.homePhoneNumber,
-        workPhoneNumber: req.body.workPhoneNumber,
-        email: req.body.email,
-        city: req.body.city,
-        numberHouseOrFlat: req.body.numberHouseOrFlat,
-        address: req.body.address
     }
 
     try {
